@@ -41,3 +41,5 @@ function livereloadServer(options, log) {
   });
   return server;
 }
+
+module.exports = exports.default;

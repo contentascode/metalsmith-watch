@@ -385,3 +385,5 @@ function _default(options) {
   plugin.options = options;
   return plugin;
 }
+
+module.exports = exports.default;
