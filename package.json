@@ -23,7 +23,8 @@
     "metalsmith-filenames": "^1.0.0",
     "multimatch": "^2.0.0",
     "tiny-lr": "^1.1.1",
-    "unyield": "0.0.1"
+    "unyield": "0.0.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -40,10 +41,12 @@
     "tape": "^4.0.0"
   },
   "scripts": {
-    "prepublish": "babel src --out-dir dist",
+    "prepublish": "npm run snyk-protect && babel src --out-dir dist",
     "lint": "eslint .",
     "tape": "babel-tape-runner \"__tests__/*.es\"",
     "test": "npm run lint && npm run tape",
-    "release": "npmpub"
-  }
+    "release": "npmpub",
+    "snyk-protect": "snyk protect"
+  },
+  "snyk": true
 }
